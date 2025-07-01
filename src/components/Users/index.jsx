@@ -43,7 +43,7 @@ export const Users = ({
                      );
                   })
                   .map((obj) => (
-                     <User isInvited key={obj.id} {...obj} />
+                     <User onClickInvite={onClickInvite} key={obj.id} {...obj} />
                   ))}
             </ul>
          )}

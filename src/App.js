@@ -67,6 +67,8 @@ function App() {
    const [isLoading, setLoadin] = React.useState(true);
    const [searchValue, setSearchValue] = React.useState('');
 
+   console.log(invites);
+
    // фальшивый запрос <----------------------------------------------- УДАЛИТЬ
    React.useEffect(() => {
       setTimeout(() => {
