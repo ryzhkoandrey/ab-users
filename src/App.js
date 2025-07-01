@@ -7,9 +7,13 @@ import { Users } from './components/Users';
 
 function App() {
    const [users, setUsers] = React.useState([]);
+   const [isLoading, setLoadin] = React.useState(true);
 
    React.useEffect(() => {
-      fetch('https://reqres.in/api/users')
+      fetch('https://reqres.in/api/users2')
+         // fetch('https://reqres.in/api/users', {
+         //    headers: { 'x-api-key': 'reqres-free-v1' },
+         // })
          .then((res) => res.json())
          .then((json) => {
             setUsers(json.data);
@@ -22,7 +26,7 @@ function App() {
 
    return (
       <div className="App">
-         <Users />
+         <Users items={users} />
          {/* <Success /> */}
       </div>
    );
