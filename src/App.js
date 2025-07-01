@@ -5,7 +5,7 @@ import { Users } from './components/Users';
 
 // Тут список пользователей: https://reqres.in/api/users
 
-// fake API
+// фальшивый API <----------------------------------------------------- УДАЛИТЬ
 const usersFromAPI = {
    page: 1,
    per_page: 6,
@@ -65,12 +65,17 @@ function App() {
    const [users, setUsers] = React.useState([]);
    const [isLoading, setLoadin] = React.useState(true);
 
-   // fake API
+   console.log('render', users);
+
+   // фальшивый запрос <----------------------------------------------- УДАЛИТЬ
    React.useEffect(() => {
-      setUsers(usersFromAPI.data);
-      setLoadin(false);
+      setTimeout(() => {
+         setUsers(usersFromAPI.data);
+         setLoadin(false);
+      }, 2000);
    }, []);
 
+   // настоящий запрос <----------------------------------------------- ВОССТАНОВИТЬ
    // React.useEffect(() => {
    //    fetch('https://reqres.in/api/users', {
    //       headers: { 'x-api-key': 'reqres-free-v1' },
