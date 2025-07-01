@@ -63,6 +63,7 @@ const usersFromAPI = {
 
 function App() {
    const [users, setUsers] = React.useState([]);
+   const [invites, setInvites] = React.useState([]);
    const [isLoading, setLoadin] = React.useState(true);
    const [searchValue, setSearchValue] = React.useState('');
 

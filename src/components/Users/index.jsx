@@ -36,7 +36,7 @@ export const Users = ({ items, isLoading, searchValue, onChangeSearchValue }) =>
                      );
                   })
                   .map((obj) => (
-                     <User key={obj.id} {...obj} />
+                     <User isInvited key={obj.id} {...obj} />
                   ))}
             </ul>
          )}
