@@ -11,8 +11,11 @@ export const Users = ({ items, isLoading }) => {
             </svg>
             <input type="text" placeholder="Найти пользователя..." />
          </div>
+
          {isLoading ? (
             <div className="skeleton-list">
+               <Skeleton />
+               <Skeleton />
                <Skeleton />
                <Skeleton />
                <Skeleton />
@@ -20,10 +23,11 @@ export const Users = ({ items, isLoading }) => {
          ) : (
             <ul className="users-list">
                {items?.map((obj) => (
-                  <User key={obj.id} />
+                  <User key={obj.id} {...obj} />
                ))}
             </ul>
          )}
+
          <button className="send-invite-btn">Отправить приглашение</button>
       </>
    );
