@@ -64,8 +64,7 @@ const usersFromAPI = {
 function App() {
    const [users, setUsers] = React.useState([]);
    const [isLoading, setLoadin] = React.useState(true);
-
-   console.log('render', users);
+   const [searchValue, setSearchValue] = React.useState('');
 
    // фальшивый запрос <----------------------------------------------- УДАЛИТЬ
    React.useEffect(() => {
@@ -91,9 +90,18 @@ function App() {
    //       .finally(() => setLoadin(false));
    // }, []);
 
+   const onChangeSearchValue = (event) => {
+      setSearchValue(event.target.value);
+   };
+
    return (
       <div className="App">
-         <Users items={users} isLoading={isLoading} />
+         <Users
+            onChangeSearchValue={onChangeSearchValue}
+            searchValue={searchValue}
+            items={users}
+            isLoading={isLoading}
+         />
          {/* <Success /> */}
       </div>
    );
